@@ -1,4 +1,5 @@
 body {
+	font-family: Open Sans;
 	width: 70%;
 	margin: auto;
 	background-image: url("https://ununsplash.imgix.net/reserve/D9xlw7UxTBqQw5sLf8cJ_reef%20insp-72.jpg?fit=crop&fm=jpg&h=700&q=75&w=1050");
@@ -20,14 +21,18 @@ header {
 }
 
 section {
-	height: 60%;
+	height: 65%;
 }
 
 footer {
-	height: 20%;
+	padding-top: 20px;
+	color: #fff;
+	height: 15%;
 	text-align: center;
 }
-
+#location_search {
+	float: left;
+}
 #favorite {
 	float: right;
 }
