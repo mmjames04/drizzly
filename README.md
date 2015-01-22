@@ -27,3 +27,4 @@ Favoriting:
 ### ERD
 
 ![ERD Image](/drizzly.png)
+
