@@ -2,22 +2,20 @@ class FavoritesController < ApplicationController
 
 
 	def create
-		@article = Article.find(params[:article_id])
-		@comment = @article.comments.create(comment_params)
-		redirect_to article_path(@article)
+		@favorite = current_user.favorites.create(favorite_params)
+		redirect_to weather_path
 	end
 
-	# destroys comment and redicrect to articles page
+	# destroys favorite and redicrect to articles page
 	def destroy
-		@article = Article.find(params[:article_id])
-		@comment = @article.comments.find(params[:id])
-		@comment.destroy
-		redirect_to article_path(@article)
+		@favorite = current_user.favorites.find(params[:id])
+		@favorite.destroy
+		redirect_to weather_path
 	end
 
 	private 
 
-		def comment_params
-			params.require(:comment).permit(:commenter, :body)
+		def favorite_params
+			params.require(:favorite).permit(:name, :city, :state)
 		end
 end
