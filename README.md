@@ -2,7 +2,7 @@
 
 A Rails app for current weather and 10-day forecasts. Plus the ability to save your favorite locations!
 
-**USER STORIES**
+### USER STORIES
 
 User authentication:
 	-	A new user can sign up for Drizz.ly
