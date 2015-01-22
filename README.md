@@ -1,4 +1,4 @@
-== README
+# DRIZZ.LY
 
 A Rails app for current weather and 10-day forecasts. Plus the ability to save your favorite locations!
 
