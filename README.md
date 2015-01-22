@@ -21,3 +21,6 @@ Favoriting:
 	-	A user can select one of their favorite locations and see the weather there
 	-	A user can NOT see other users' info or favorites
 
+### ERD
+
+![ERD Image](/drizzly.png)
