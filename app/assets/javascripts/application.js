@@ -20,8 +20,14 @@
 current_observation
 
 jQuery(document).ready(function($) {
+  
+  $("#search").on('submit', function(event{
+  	event.preventDefault();
+
+  var url : "http://api.wunderground.com/api/8eff5076b5830486/geolookup/conditions/q/"+ state +" / "+ city +".json",
+  input.val('');
   $.ajax({
-  url : "http://api.wunderground.com/api/8eff5076b5830486/geolookup/conditions/q/"+ state +" / "+ city +".json",
+  	url: url,
   dataType : "jsonp",
   success : function(parsed_json) {
   	var location = parsed_json['location']['city'];
