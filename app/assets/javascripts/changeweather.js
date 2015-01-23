@@ -2,3 +2,49 @@ $("select").on("change", function(){
 	var city = "city"
 	var location = "location"
 })
+
+///// event listeners made by andy 
+
+//// this is what will happen....
+
+function getWeather(city_search,state_search){
+	var url_con_search = "http://api.wunderground.com/api/8eff5076b5830486/geolookup/conditions/q/"+ state_search +"/"+ city_search +".json";
+	var url_ten_search =  "http://api.wunderground.com/api/8eff5076b5830486/forecast10day/q/"+state_search +"/"+ city_search +".json";
+  $.ajax({
+  	url: url_con_search,
+  	dataType: "jsonp",
+  	success: function(parsed_json) {
+     	var temp_f = parsed_json['current_observation']['temp_f'];
+    	var weather = parsed_json['current_observation']['weather'];	
+      $("#city h2").text(city_search);
+      $("#state h2").text(state_search);
+      $("#temp h3").text(temp_f + " degrees");
+      $("#short-summary h4").text(weather);
+  }
+	});
+	$.ajax({
+		url: url_ten_search,
+		dataType : "jsonp",
+		success : function(parsed_json){
+			ten_day_search = parsed_json['forecast']['simpleforecast']['forecastday'];
+			for(i=0; i<1; i++){
+				var current_day_desc_search = parsed_json['forecast']['txt_forecast']['forecastday'][i]['fcttext'];
+			};
+  		$("#long-summary p").text(current_day_desc_search);
+			for (i = 0; i < ten_day_search.length; i++){
+  			var weekday = ten_day_search[i].date.weekday;
+  			var high = ten_day_search[i].high.fahrenheit;
+  			var low = ten_day_search[i].low.fahrenheit;
+  			var weather = ten_day_search[i].conditions;
+  			$("#"+ i + "> ul").append(
+    			"<li>"+ weekday  +"</li>" +
+    			"<li>"+ high  +"</li>" +
+    			"<li>"+ low +"</li>" +
+    			"<li>"+ weather  +"</li>"
+    		);
+  		};
+		};
+	});
+};
+
+getWeather(Albany,NY);
