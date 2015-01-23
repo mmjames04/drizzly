@@ -7,6 +7,7 @@ class StaticPagesController < ApplicationController
 
 	def show
 		@favorites = current_user.favorites
+		@favorite = current_user.favorites.new
 	end
 
 end
