@@ -92,7 +92,7 @@
 		<%= f.text_field :name, :placeholder => "Nickname this city..." %>
 		<%= f.hidden_field :city %>
 		<%= f.hidden_field :state %>
-		<%= f.submit %>
+		<%= f.submit "fav", :class => 'submit_favorite' %>
 		<% end %>
 	</div>
 	<p val="<%=current_user.id%>" id="current_user"><p>
