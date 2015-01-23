@@ -4,7 +4,7 @@
   <title>Drizzly</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag :defaults %>
+  
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -13,8 +13,8 @@
 	<% if current_user %>
 	<ul>
 		<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></l1>
-		<li><%= link_to "Profile", edit_user_registration_path %></l1>
-		<li><%= link_to "Weather", weather_path %></li>
+		<li><%= link_to "Edit account", edit_user_registration_path %></l1>
+		<li><%= link_to "See the weather", weather_path %></li>
 	</ul>
 	<% end %>
 </header>
@@ -24,6 +24,7 @@
 <footer>
 	<p>&copy 2015 Drizzly, Inc.</p>
 </footer>
-<%= javascript_include_tag 'weather' %>
+<%= javascript_include_tag 'favorites' %>
+<%= javascript_include_tag 'changeweather' %>
 </body>
 </html>

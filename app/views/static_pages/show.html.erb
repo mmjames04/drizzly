@@ -1,9 +1,11 @@
 <section>
-<div id="location_search">
-		<h2>Search a new location</h2>
-		<input type="text" placeholder="City">
-		<input type="text" placeholder="State">
-		<input type="submit" value="Let's go">
+	<div id="location_search">
+		<h4>Search a new location</h4>
+		<form id="weather_search">
+			<input id="weather_search_city" type="text" placeholder="City">
+			<input id="weather_search_state" type="text" placeholder="State">
+			<input type="submit" value="Let's go">
+		</form>
 	</div>
 
 
@@ -11,8 +13,9 @@
 		<h2>Favorite List</h2>
 		<select>
 			<%= @favorites.each do |favorite| %>
-  		<option value="<%=favorite.id%>"><%=favorite.name%></option>
+  		<option name="<%=favorite.id%>" value="<%=favorite.city%>,<%=favorite.state%>" id="favorite<%=favorite.id%>"><%=favorite.name%></option>
   		<% end %>
+  		<input id="delete_favorite" type="submit" value="Delete Favorite">
 		</select>
 	</div>
 </section>
@@ -20,19 +23,19 @@
 	<div id="main-forecast">
 	<h1>Main Forecast</h1>
 		<div id="city">
-			<h2>city</h2>
+			<h2></h2>
 		</div>
 		<div id="state">
-			<h2>state</h2>
+			<h2></h2>
 		</div>
 		<div id="temp">
-			<h3>temp</h3>
+			<h3></h3>
 		</div>
 		<div id="short-summary">
-			<h4>short-summary</h4>
+			<h4></h4>
 		</div>
 		<div id="long-summary">
-			<p>long-summary</p>
+			<p></p>
 		</div>
 	</div>
 </section>
@@ -41,95 +44,56 @@
 	<h2>Ten Day Forecast</h2>
 		<div id="0">
 			<ul>
-				<li>Day of Week</li>
-				<li>High</li>
-				<li>Low</li>
-				<li>Conditions</li>
 			</ul>
 		</div>
 		<div id="1">
 			<ul>
-				<li>Day of Week</li>
-				<li>High</li>
-				<li>Low</li>
-				<li>Conditions</li>
 			</ul>
 		</div>
 		<div id="2">
 			<ul>
-				<li>Day of Week</li>
-				<li>High</li>
-				<li>Low</li>
-				<li>Conditions</li>
 			</ul>
 		</div>
 		<div id="3">
 			<ul>
-				<li>Day of Week</li>
-				<li>High</li>
-				<li>Low</li>
-				<li>Conditions</li>
 			</ul>
 		</div>
 		<div id="4">
 			<ul>
-				<li>Day of Week</li>
-				<li>High</li>
-				<li>Low</li>
-				<li>Conditions</li>
 			</ul>
 		</div>
 		<div id="5">
 			<ul>
-				<li>Day of Week</li>
-				<li>High</li>
-				<li>Low</li>
-				<li>Conditions</li>
 			</ul>
 		</div>
 		<div id="6">
 			<ul>
-				<li>Day of Week</li>
-				<li>High</li>
-				<li>Low</li>
-				<li>Conditions</li>
 			</ul>
 		</div>
 		<div id="7">
 			<ul>
-				<li>Day of Week</li>
-				<li>High</li>
-				<li>Low</li>
-				<li>Conditions</li>
 			</ul>
 		</div>
 		<div id="8">
 			<ul>
-				<li>Day of Week</li>
-				<li>High</li>
-				<li>Low</li>
-				<li>Conditions</li>
 			</ul>
 		</div>
 		<div id="9">
 			<ul>
-				<li>Day of Week</li>
-				<li>High</li>
-				<li>Low</li>
-				<li>Conditions</li>
 			</ul>
 		</div>
 	</div>
 </section>
 <section>
 	<div id="favorite_button">
-		<%= form_for @favorite do |f| %>
-			<%= f.text_field :name, :placeholder => "Nickname this city..." %>
-			<%= f.hidden_field :city %>
-			<%= f.hidden_field :state %>
-			<%= f.submit %>
+		<%= form_for ([current_user, current_user.favorites.build]) do |f| %>
+		<%= f.label :favorite_name %>
+		<%= f.text_field :name, :placeholder => "Nickname this city..." %>
+		<%= f.hidden_field :city %>
+		<%= f.hidden_field :state %>
+		<%= f.submit %>
 		<% end %>
 	</div>
-</section>
-
+	<p val="<%=current_user.id%>" id="current_user"><p>
+</section>	
 
