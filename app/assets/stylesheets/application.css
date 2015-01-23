@@ -115,3 +115,7 @@ input, select {
 	text-align: center;
 }
 
+#favorite_button input::-webkit-input-placeholder {
+   color: rgba(0, 0, 0,.5);
+}
+
