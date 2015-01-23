@@ -27,3 +27,5 @@ $("#delete_favorite").on("click", function(event){
 		}
 	})
 })
+
+$("select").on("change")
