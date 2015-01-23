@@ -10,12 +10,13 @@
 <body>
 <header>
 	<h1>Drizzly</h1>
-
+	<% if current_user %>
 	<ul>
 		<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></l1>
 		<li><%= link_to "Profile", edit_user_registration_path %></l1>
-		<li>Home</li>
+		<li><%= link_to "Weather", weather_path %></li>
 	</ul>
+	<% end %>
 </header>
 <%= yield %>
 
