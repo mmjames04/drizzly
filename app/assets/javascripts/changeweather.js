@@ -28,10 +28,11 @@ function getWeather(city_search,state_search){
   			var high = ten_day_search[i].high.fahrenheit;
   			var low = ten_day_search[i].low.fahrenheit;
   			var weather = ten_day_search[i].conditions;
+  			$("#"+ i + "> ul").empty();
   			$("#"+ i + "> ul").append(
-    			"<li>"+ weekday  +"</li>" +
-    			"<li>"+ high  +"</li>" +
-    			"<li>"+ low +"</li>" +
+    			"<li><strong>"+ weekday  +"</strong></li>" +
+    			"<li>High:"+ high  +"</li>" +
+    			"<li>Low:"+ low +"</li>" +
     			"<li>"+ weather  +"</li>"
     		);
   		};
