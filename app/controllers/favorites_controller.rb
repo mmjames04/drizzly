@@ -7,8 +7,12 @@ class FavoritesController < ApplicationController
 
 	def destroy
 		@favorite = current_user.favorites.find(params[:id])
-		@favorite.destroy
-		redirect_to weather_path
+		if @favorite.destroy
+      respond_to do |format|
+        format.html 
+        format.json {render json: @favorite}
+      end
+    end
 	end
 
 	private 
