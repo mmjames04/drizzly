@@ -10,7 +10,7 @@
 
 
 	<div id="favorite">
-		<h4>Favorite List</h4>
+		<h2>Favorite List</h2>
 		<select>
 			<%= @favorites.each do |favorite| %>
   		<option name="<%=favorite.id%>" value="<%=favorite.city%>,<%=favorite.state%>" id="favorite<%=favorite.id%>"><%=favorite.name%></option>
@@ -18,8 +18,8 @@
   		<input id="delete_favorite" type="submit" value="Delete Favorite">
 		</select>
 	</div>
-
-
+</section>
+<section>
 	<div id="main-forecast">
 	<h1>Main Forecast</h1>
 		<div id="city">
@@ -38,9 +38,10 @@
 			<p>long-summary</p>
 		</div>
 	</div>
-
+</section>
+<section>
 	<div id="ten-day-forecast">
-	<h1>Ten Day Forecast</h1>
+	<h2>Ten Day Forecast</h2>
 		<div id="0">
 			<ul>
 				<li>Day of Week</li>
@@ -122,12 +123,12 @@
 			</ul>
 		</div>
 	</div>
-
-
+</section>
+<section>
 	<div id="favorite_button">
 		<%= form_for ([current_user, current_user.favorites.build]) do |f| %>
 		<%= f.label :favorite_name %>
-		<%= f.text_field :name %>
+		<%= f.text_field :name, :placeholder => "Nickname this city..." %>
 		<%= f.hidden_field :city %>
 		<%= f.hidden_field :state %>
 		<%= f.submit %>
