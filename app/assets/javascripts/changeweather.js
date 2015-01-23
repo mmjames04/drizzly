@@ -8,6 +8,9 @@ function getWeather(city_search,state_search){
   	success: function(parsed_json) {
      	var temp_f = parsed_json['current_observation']['temp_f'];
     	var weather = parsed_json['current_observation']['weather'];	
+      icon = parsed_json['current_observation']['icon_url'];
+    
+      $("#pic").html("<img style='width: 10%;' src=" + icon + "></img>");
       $("#city h2").text(city_search);
       $("#state h2").text(state_search);
       $("#temp h3").text(temp_f + " degrees");
@@ -28,8 +31,10 @@ function getWeather(city_search,state_search){
   			var high = ten_day_search[i].high.fahrenheit;
   			var low = ten_day_search[i].low.fahrenheit;
   			var weather = ten_day_search[i].conditions;
+        var image = ten_day_search[i].icon_url
   			$("#"+ i + "> ul").empty();
   			$("#"+ i + "> ul").append(
+          "<img src=" + image + "></img>" +
     			"<li><strong>"+ weekday  +"</strong></li>" +
     			"<li>High:"+ high  +"</li>" +
     			"<li>Low:"+ low +"</li>" +
