@@ -89,7 +89,6 @@
 <section>
 	<div id="favorite_button">
 		<%= form_for ([current_user, current_user.favorites.build]) do |f| %>
-		<%= f.label :favorite_name %>
 		<%= f.text_field :name, :placeholder => "Nickname this city..." %>
 		<%= f.hidden_field :city %>
 		<%= f.hidden_field :state %>

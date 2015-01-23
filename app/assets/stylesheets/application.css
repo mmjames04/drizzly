@@ -31,7 +31,7 @@ body {
 
 .drop {
   background:-webkit-gradient(linear,0% 0%,0% 100%, from(rgba(255,255,255,1) ), to(rgba(0,0,0,0.6))  );
-	width:2px;
+	width:3px;
 	height:75px;
 	position: absolute;
 	bottom:200px;
@@ -50,6 +50,10 @@ body {
 
 header {
 	height: 20%;
+}
+
+header a{
+	color: black;
 }
 
 header h1 {
