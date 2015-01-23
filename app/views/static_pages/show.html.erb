@@ -1,6 +1,6 @@
 <section>
 	<div id="location_search">
-		<h4>Search a new location</h4>
+		<h2>Search a new location</h2>
 		<form id="weather_search">
 			<input id="weather_search_city" type="text" placeholder="City">
 			<input id="weather_search_state" type="text" placeholder="State">
@@ -10,7 +10,7 @@
 
 
 	<div id="favorite">
-		<h2>Favorite List</h2>
+		<h2>Choose from Favorites</h2>
 		<select>
 			<%= @favorites.each do |favorite| %>
   		<option name="<%=favorite.id%>" value="<%=favorite.city%>,<%=favorite.state%>" id="favorite<%=favorite.id%>"><%=favorite.name%></option>

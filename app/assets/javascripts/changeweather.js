@@ -10,7 +10,7 @@ function getWeather(city_search,state_search){
     	var weather = parsed_json['current_observation']['weather'];	
       icon = parsed_json['current_observation']['icon_url'];
     
-      $("#pic").html("<img style='width: 10%;' src=" + icon + "></img>");
+      $("#pic").html("<img style='width: 30%;' src=" + icon + "></img>");
       $("#city h2").text(city_search);
       $("#state h2").text(state_search);
       $("#temp h3").text(temp_f + " degrees");
