@@ -1,22 +1,3 @@
-$("select").on("change", function(e){
-	e.preventDefault();
-	var city = $(":selected").val().split(",")[0]
-	var state = $(":selected").val().split(",")[1]
-	console.log(city);
-	console.log(state);
-})
-
-$("#weather_search").on("submit", function(e){
-	e.preventDefault();
-	var city = $("#weather_search_city").val();
-	var state = $("#weather_search_state").val()
-	console.log(city)
-	console.log(state)
-})
-
-///// event listeners made by andy 
-
-//// this is what will happen....
 
 function getWeather(city_search,state_search){
 	var url_con_search = "http://api.wunderground.com/api/8eff5076b5830486/geolookup/conditions/q/"+ state_search +"/"+ city_search +".json";
@@ -54,7 +35,41 @@ function getWeather(city_search,state_search){
     			"<li>"+ weather  +"</li>"
     		);
   		};
-		};
+		}
 	});
 };
 
+//// BY DEFAULT, LOAD WEATHER FROM IP ADDRESS ////
+
+	
+
+$( document ).ready(function() {
+	var url_ip = "http://api.wunderground.com/api/8eff5076b5830486/geolookup/q/autoip.json";
+  $.ajax({
+  url: url_ip,
+  dataType : "jsonp",
+  success : function(parsed_json) {
+  	var city = parsed_json['location']['city'];
+  	var state = parsed_json['location']['state'];
+  	getWeather(city,state);
+  }
+	});
+});
+
+
+//// EVENT LISTENERS TO CHANGE WEATHER //// 
+
+
+$("select").on("change", function(e){
+	e.preventDefault();
+	var city = $(":selected").val().split(",")[0];
+	var state = $(":selected").val().split(",")[1];
+	getWeather(city,state);
+})
+
+$("#weather_search").on("submit", function(e){
+	e.preventDefault();
+	var city = $("#weather_search_city").val();
+	var state = $("#weather_search_state").val()
+	getWeather(city,state);
+})
