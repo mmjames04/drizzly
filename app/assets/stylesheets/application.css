@@ -19,43 +19,50 @@ body {
 	margin: auto;
 	background-image: url("https://ununsplash.imgix.net/reserve/D9xlw7UxTBqQw5sLf8cJ_reef%20insp-72.jpg?fit=crop&fm=jpg&h=700&q=75&w=1050");
 	background-repeat: no-repeat;
-	background-position: center;
-}
-
-h1 {
-	padding-top: 30px;
-}
-
-ul {
-	list-style-type: none;
-}
-
-ul li {
-	float: right;
-	padding-left: 20px;
+	background-position: center top;
+	background-size: cover;
 }
 
 header {
 	height: 20%;
 }
 
+header h1 {
+	display: inline-block;
+	padding-top: 20px;
+	font-size: 40px;
+}
+
+header ul {
+	display: inline-block;
+	float: right;
+	height: 20px;
+	padding-top: 50px;
+}
+
+header ul li {
+	list-style-type: none;
+	float: right;
+	padding-left: 20px;
+}
+
 section {
-	padding-top: 30px;
-	height: 400px;
+	padding-top: 10px;
 }
 
 footer {
-	color: #fff;
-	height: 20%;
 	text-align: center;
+	color: #000;
+	height: 20%;
 }
 
 #location_search {
-	float: left;
+	display: inline-block;
 }
 
 #favorite {
-	float: right;
+	margin-left: 50px;
+	display: inline-block;
 }
 
 input, select {
@@ -70,7 +77,41 @@ input, select {
     box-shadow: 
       inset 0 0 8px  rgba(0,0,0,0.1),
             0 0 16px rgba(0,0,0,0.1); 
-    padding: 15px;
+    padding: 2px;
     background: rgba(255,255,255,0.5);
     margin: 0 0 10px 0;
 }
+
+#main-forecast {
+	text-align: center;	
+}
+
+#main-forecast h1 {
+	display: none;	
+}
+
+#city, #state {
+	display: inline-block;
+}
+
+#ten-day-forecast {
+	text-align: center;
+
+}
+
+#ten-day-forecast li {
+	list-style-type: none;
+}
+
+#ten-day-forecast div {
+	text-align: left;
+	display: inline-block;
+	width: 160px;
+	background-color: rgba(200, 200, 200, 0.6);
+	margin-bottom: 10px;
+}
+
+#favorite_button {
+	text-align: center;
+}
+
