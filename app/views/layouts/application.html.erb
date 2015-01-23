@@ -4,10 +4,19 @@
   <title>Drizzly</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+	<h1>Drizzly</h1>
 
+	<ul>
+		<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></l1>
+		<li><%= link_to "Profile", edit_user_registration_path %></l1>
+		<li>Home</li>
+	</ul>
+</header>
 <%= yield %>
 
 </body>

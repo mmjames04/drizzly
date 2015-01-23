@@ -27,6 +27,16 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city, autocomplete: "off", value: current_user.city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state, autocomplete: "off", value: current_user.state %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
