@@ -11,7 +11,7 @@
 		<h4>Favorite List</h4>
 		<select>
 			<%= @favorites.each do |favorite| %>
-  		<option value="<%=favorite.id%>" id="favorite<%=favorite.id%>"><%=favorite.name%></option>
+  		<option name="<%=favorite.id%>" id="favorite<%=favorite.id%>"><%=favorite.name%></option>
   		<% end %>
   		<input id="delete_favorite" type="submit" value="Delete Favorite">
 		</select>

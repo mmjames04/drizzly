@@ -9,7 +9,7 @@ $("#new_favorite").on("submit", function(event){
 
 $("#delete_favorite").on("click", function(event){
 	event.preventDefault();
-	var favoriteId = $(":selected").val();
+	var favoriteId = $(":selected").attr("name");
 	console.log(favoriteId)
 	var currentUserId = $("#current_user_id").val()
 	var url = ("/users/"+currentUserId+"/favorites/" + favoriteId)
@@ -28,4 +28,3 @@ $("#delete_favorite").on("click", function(event){
 	})
 })
 
-$("select").on("change")
