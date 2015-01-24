@@ -17,7 +17,7 @@
 
 //http://api.wunderground.com/api/8eff5076b5830486/conditions/q/ "+ state +" / "+ city +" .json
 
-current_observation
+
 
 jQuery(document).ready(function($) {
   
