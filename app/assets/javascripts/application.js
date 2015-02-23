@@ -48,21 +48,21 @@ jQuery(document).ready(function($) {
 // http://api.wunderground.com/api/8eff5076b5830486/forecast10day/q/"+ state +" / "+ city +" .json
 
 
-// <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-// <script>
-// jQuery(document).ready(function($) {
-//   $.ajax({
-//   url : "http://api.wunderground.com/api/8eff5076b5830486/geolookup/forecast10day/q/"+state +"/"+ city +".json",
-//   dataType : "jsonp",
-//   success : function(parsed_json) {
-//   var location = parsed_json['location']['city'];
-//   var temp_f = parsed_json['forecast']['temp_f'];
-// 	var weather = parsed_json['forecast']['weather'];
-//   alert("Current forcast in " + location + " is: " + temp_f);
-//   }
-//   });
-// });
-// </script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script>
+jQuery(document).ready(function($) {
+  $.ajax({
+  url : "http://api.wunderground.com/api/8eff5076b5830486/geolookup/forecast10day/q/"+state +"/"+ city +".json",
+  dataType : "jsonp",
+  success : function(parsed_json) {
+  var location = parsed_json['location']['city'];
+  var temp_f = parsed_json['forecast']['temp_f'];
+	var weather = parsed_json['forecast']['weather'];
+  alert("Current forcast in " + location + " is: " + temp_f);
+  }
+  });
+});
+</script>
 
 
 
